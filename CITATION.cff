@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below, together with the associated paper."
+type: software
+title: "Code and data for: Designing Harvest Control Rules for Jack Mackerel using Stochastic Optimization in Policy Space"
+version: "1.0.0"
+date-released: "2026-10-19"
+license: MIT
+repository-code: "https://github.com/rlicandeo/sops-jack-mackerel"
+abstract: >-
+  Age-structured management strategy evaluation (MSE) for jack mackerel
+  (Trachurus murphyi) of the South Pacific Regional Fisheries Management
+  Organisation (SPRFMO). Stochastic Optimization in Policy Space (SOPS) is
+  applied through a grid search over a linear harvest control rule, which is
+  compared with traditional harvest control rules under three operating models.
+  Includes the input data (from the JJM stock assessment), the scripts that
+  reproduce all results, tables and figures of the paper and its Appendix, and
+  the exact package versions (renv).
+keywords:
+  - management strategy evaluation
+  - harvest control rules
+  - stochastic optimization in policy space
+  - jack mackerel
+  - Trachurus murphyi
+  - SPRFMO
+  - R
+authors:
+  - family-names: Licandeo
+    given-names: Roberto
+    affiliation: "IMFEMC Consulting, Chilliwack, BC, Canada"
+  - family-names: Canales
+    given-names: Cristian M.
+    affiliation: "Escuela de Ciencias del Mar, Pontificia Universidad Católica de Valparaíso, Valparaíso, Chile"
+  - family-names: Walters
+    given-names: Carl
+    affiliation: "Institute for the Oceans and Fisheries, University of British Columbia, Vancouver, BC, Canada"
