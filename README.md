@@ -4,6 +4,16 @@ Code, input data and outputs for:
 
 > Licandeo, R., Canales, C. M., & Walters, C. *Designing Harvest Control Rules for Jack Mackerel using Stochastic Optimization in Policy Space*. Ecological Modelling (under review).
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23469253.svg)](https://doi.org/10.5281/zenodo.23469253)
+
+## How to cite
+
+Please cite the paper and this code:
+
+> Licandeo, R., Canales, C. M., & Walters, C. (2026). *Code and data for: Designing Harvest Control Rules for Jack Mackerel using Stochastic Optimization in Policy Space* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23469253
+
+The DOI above refers to version 1.0.0, the version used in the paper. The DOI https://doi.org/10.5281/zenodo.23469252 always resolves to the latest version.
+
 The code runs an age-structured management strategy evaluation (MSE) for jack mackerel (*Trachurus murphyi*). It applies Stochastic Optimization in Policy Space (SOPS) through a grid search over a linear harvest control rule (HCR3). HCR3 is then compared with three traditional HCRs (HCR0 to HCR2) under three operating models. All scripts reproduce the results, tables and figures of the paper exactly. The code follows the tidyverse style (formatted with the styler package).
 
 ## Structure
