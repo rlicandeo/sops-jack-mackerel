@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this code or data, please cite it as below, together with the associated paper."
 type: software
 title: "Code and data for: Designing Harvest Control Rules for Jack Mackerel using Stochastic Optimization in Policy Space"
-version: "1.0.0"
-date-released: "2026-10-19"
+version: "1.0.1"
+date-released: "2026-10-24"
 license: MIT
 repository-code: "https://github.com/rlicandeo/sops-jack-mackerel"
 abstract: >-

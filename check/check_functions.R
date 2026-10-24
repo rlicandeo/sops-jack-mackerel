@@ -76,12 +76,16 @@ compare_values <- function(obtained, expected) {
   if (nrow(bad) == 0) {
     cat("\nRESULT: all values are identical to the expected values.\n")
   } else if (all(bad$status == "minor difference")) {
-    cat("\nRESULT: OK. Minor numerical differences (e.g., another operating system or R version);",
-        "the conclusions do not change.\n")
+    cat(
+      "\nRESULT: OK. Minor numerical differences (e.g., another operating system or R version);",
+      "the conclusions do not change.\n"
+    )
     print(head(bad, 20), row.names = FALSE)
   } else {
-    cat("\nRESULT: some values differ from the expected values. Check the R and package versions",
-        "(renv::restore()) and that all scripts were run in order.\n")
+    cat(
+      "\nRESULT: some values differ from the expected values. Check the R and package versions",
+      "(renv::restore()) and that all scripts were run in order.\n"
+    )
     print(bad[bad$status %in% c("DIFFERENT", "MISSING"), ], row.names = FALSE)
   }
   invisible(m)

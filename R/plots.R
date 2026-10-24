@@ -163,7 +163,8 @@ plot_trajectories <- function(results_hcr,
       m <- results_hcr[[i]][[mat_name]]
       data.frame(
         HCR = hcr_lab[i], Year = 1:years,
-        lo = apply(m, 2, quantile, 0.05), hi = apply(m, 2, quantile, 0.95)
+        lo = apply(m, 2, quantile, 0.05), hi = apply(m, 2, quantile, 0.95),
+        med = apply(m, 2, median)
       )
     }))
   }
@@ -188,9 +189,11 @@ plot_trajectories <- function(results_hcr,
     ggplot() +
       geom_ribbon(data = b, aes(Year, ymin = lo, ymax = hi, fill = HCR), alpha = 0.3) +
       geom_hline(yintercept = ref, linetype = "dashed", color = "grey30", linewidth = 0.5) +
-      geom_line(data = l, aes(Year, value, linetype = Replicate), linewidth = 0.5) +
+      geom_line(data = l, aes(Year, value, linetype = Replicate), linewidth = 0.4, color = "grey25") +
+      geom_line(data = b, aes(Year, med, color = HCR), linewidth = 1.6, alpha = 0.55) + # median
       facet_wrap(~HCR, nrow = 1) +
       scale_fill_manual(values = hcr_col, guide = "none") +
+      scale_color_manual(values = hcr_col, guide = "none") +
       scale_linetype_manual(
         values = c(Low = "dotted", Medium = "solid", High = "dashed"),
         name = "Example replicate (mean SSB under HCR3)"
@@ -488,7 +491,8 @@ plot_tradeoff <- function(results_all,
 
   if (save_plot) {
     n_sc <- length(unique(safe_hcrs$scenario_id))
-    ggsave(device = ragg::agg_png, paste0("SOPS_tradeoff_pareto_", scenario_tag, ".png"),
+    ggsave(
+      device = ragg::agg_png, paste0("SOPS_tradeoff_pareto_", scenario_tag, ".png"),
       width = 9, height = 6 * ceiling(n_sc / 3), dpi = 300
     )
   }
@@ -588,10 +592,11 @@ plot_utility <- function(results_all, show_safe = TRUE, save_grid = TRUE,
 
   if (save_plot) {
     n_sc <- length(unique(results_plot$scenario_id))
-    ggsave(device = ragg::agg_png, paste0("SOPS_utility_contour_", scenario_tag, ".png"),
-      width  = 8,
+    ggsave(
+      device = ragg::agg_png, paste0("SOPS_utility_contour_", scenario_tag, ".png"),
+      width = 8,
       height = 6 * ceiling(n_sc / 3),
-      dpi    = 300
+      dpi = 300
     )
   }
   p
@@ -672,10 +677,11 @@ plot_SSBmsy_carruthers <- function(results_all, show_safe = TRUE, save_grid = TR
 
   if (save_plot) {
     n_sc <- length(unique(results_plot$scenario_id))
-    ggsave(device = ragg::agg_png, paste0("SOPS_above_half_SSBmsy_contour_", scenario_tag, ".png"),
-      width  = 8,
+    ggsave(
+      device = ragg::agg_png, paste0("SOPS_above_half_SSBmsy_contour_", scenario_tag, ".png"),
+      width = 8,
       height = 6 * ceiling(n_sc / 3),
-      dpi    = 300
+      dpi = 300
     )
   }
   p
